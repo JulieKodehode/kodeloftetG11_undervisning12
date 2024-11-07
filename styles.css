@@ -61,10 +61,10 @@ main {
 /* The keyframe sets up whats going to happen at diffrent points in the animation. In this instanse where 'from' starts with a minus size that follows the X-axis(horizontal line) and 'to' a zero size going to the middle. */
 @keyframes slideInLeft {
   from {
-    transition: translateX(-300px);
+    transform: translateX(-300px);
   }
   to {
-    transition: translateX(0);
+    transform: translateX(0);
   }
 }
 
@@ -78,10 +78,10 @@ main {
 /* The keyframe sets up whats going to happen at diffrent points in the animation. In this instanse where 'from' starts with a size that follows the X-axis(horizontal line) and 'to' a zero size going to the middle. */
 @keyframes slideInRight {
   from {
-    transition: translateX(300px);
+    transform: translateX(300px);
   }
   to {
-    transition: translateX(0);
+    transform: translateX(0);
   }
 }
 
@@ -101,7 +101,7 @@ main {
   0% {
   }
   50% {
-    scale: 2;
+    transform: scale(2);
     transform: rotate(0);
     border-radius: 0;
   }
@@ -130,7 +130,7 @@ main {
 .btnColor {
   background-color: #acbea3;
 
-  transition-delay: 3s;
+  transition-delay: 1s;
   transition-timing-function: ease-in;
 }
 
@@ -142,7 +142,7 @@ main {
 .btnOpacity {
   opacity: 0.3;
 
-  transition-delay: 3s;
+  transition-delay: 1s;
   transition-timing-function: ease-in;
 }
 
@@ -152,18 +152,18 @@ main {
 
 /* Setting a transition so that the hover function will transition into its place instead of being instant */
 .btnSize {
-  scale: 1;
+  transform: scale(1);
 
-  transition-delay: 3s;
+  transition-delay: 1s;
   transition-timing-function: ease-in;
 }
 
-/* .btnSize:hover {
-  scale: 1.3;
-} */
+.btnSize:hover {
+  transform: scale(2);
+}
 
 .btnSize:active {
-  scale: 1.3;
+  transform: scale(1.3);
 }
 
 .bouncyBallContainer {
