@@ -1,0 +1,163 @@
+/* GLOBAL CSS */
+
+:root {
+  --cardFromRight: #acbea3;
+  --cardFromLeft: #120d31;
+  --rotate: #8de969;
+}
+
+.flexColCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Vanlig CSS */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  height: 100vh;
+  gap: 50px;
+}
+
+.card {
+  max-width: 500px;
+  min-width: 300px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: lightgrey;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 7px #d3d3d3;
+}
+
+.slideInLeftCard {
+  background-color: var(--cardFromLeft);
+  color: whitesmoke;
+
+  /* Setting the starting point to what the keyframe 'from' point. */
+  transition: translateX(-300px);
+
+  /* The name of the animation */
+  animation-name: slideInLeft;
+
+  /* The duration of the animation */
+  animation-duration: 3s;
+
+  /* The timing of the function */
+  animation-timing-function: ease-in;
+
+  /* Setting the animation to run 1 */
+  animation-iteration-count: 1;
+
+  /* When the animation is over it will stop where the keyframe have 'to' */
+  animation-fill-mode: forwards;
+}
+
+/* The keyframe sets up whats going to happen at diffrent points in the animation. In this instanse where 'from' starts with a minus size that follows the X-axis(horizontal line) and 'to' a zero size going to the middle. */
+@keyframes slideInLeft {
+  from {
+    transition: translateX(-300px);
+  }
+  to {
+    transition: translateX(0);
+  }
+}
+
+.slideInRightCard {
+  background-color: var(--cardFromRight);
+
+  /* Short hand: animation-name, animation-duration, animation-timing-function */
+  animation: slideInFromRight 3s ease-in;
+}
+
+/* The keyframe sets up whats going to happen at diffrent points in the animation. In this instanse where 'from' starts with a size that follows the X-axis(horizontal line) and 'to' a zero size going to the middle. */
+@keyframes slideInLeft {
+  from {
+    transition: translateX(300px);
+  }
+  to {
+    transition: translateX(0);
+  }
+}
+
+.rotateCard {
+  padding: 20px;
+  width: 100px;
+  height: 100px;
+  background-color: var(--rotate);
+
+  animation-name: rotate;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+}
+
+/* The keyframe sets up whats going to happen at diffrent points in the animation. In this instanse where 'from' starts with a size that follows the X-axis(horizontal line) and 'to' a zero size going to the middle. */
+@keyframes rotate {
+  0% {
+  }
+  50% {
+    scale: 2;
+    transform: rotate(0);
+    border-radius: 0;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-radius: 100%;
+  }
+}
+
+.hoverBtnContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px;
+  width: 100px;
+  border-radius: 40px;
+  border-width: 1px;
+  border-color: lightgrey;
+  border-style: solid;
+  box-shadow: 2px 2px 5px lightgrey;
+}
+
+/* Setting a transition so that the hover function will transition into its place instead of being instant */
+.btnColor {
+  background-color: #acbea3;
+
+  transition-delay: 3s;
+  transition-timing-function: ease-in;
+}
+
+.btnColor:hover {
+  background-color: #8de969;
+}
+
+/* Setting a transition so that the hover function will transition into its place instead of being instant */
+.btnOpacity {
+  opacity: 0.3;
+
+  transition-delay: 3s;
+  transition-timing-function: ease-in;
+}
+
+.btnOpacity:hover {
+  opacity: 1;
+}
+
+/* Setting a transition so that the hover function will transition into its place instead of being instant */
+.btnSize {
+  scale: 1;
+
+  transition-delay: 3s;
+  transition-timing-function: ease-in;
+}
+
+.btnSize:hover {
+  scale: 1.3;
+}
