@@ -20,7 +20,7 @@ body {
 }
 
 main {
-  height: 100vh;
+  min-height: 100vh;
   gap: 50px;
 }
 
@@ -72,11 +72,11 @@ main {
   background-color: var(--cardFromRight);
 
   /* Short hand: animation-name, animation-duration, animation-timing-function */
-  animation: slideInFromRight 3s ease-in;
+  animation: slideInRight 3s ease-in;
 }
 
 /* The keyframe sets up whats going to happen at diffrent points in the animation. In this instanse where 'from' starts with a size that follows the X-axis(horizontal line) and 'to' a zero size going to the middle. */
-@keyframes slideInLeft {
+@keyframes slideInRight {
   from {
     transition: translateX(300px);
   }
@@ -158,6 +158,40 @@ main {
   transition-timing-function: ease-in;
 }
 
-.btnSize:hover {
+/* .btnSize:hover {
   scale: 1.3;
+} */
+
+.btnSize:active {
+  scale: 1.3;
+}
+
+.bouncyBallContainer {
+  height: 600px;
+  border: 1px solid black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.bouncyBall {
+  width: 300px;
+  height: 300px;
+  background-color: red;
+  border-radius: 100%;
+  transform-style: preserve-3d;
+  animation-name: bouncingBall;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 10;
+}
+
+@keyframes bouncingBall {
+  0%{
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-300px);
+  }
 }
